@@ -33,7 +33,7 @@
             </td>
             <td><?= $dt['keterangan'] ?></td>
             <td>
-              <a href= 'delete_action.php' class='btn btn-danger'>Hapus</a>
+              <a href="delete_action.php?id_type='<?= $dt['id_type_transportasi'] ?>'" class='btn btn-danger'>Hapus</a>
               <a class='btn btn-warning'>Edit</a>
             </td>
           </tr>
