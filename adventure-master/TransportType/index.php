@@ -54,7 +54,7 @@
             <th scope="col">Aksi</th>
           </thead>
           <tbody>
-            <?php $a=1; while($dt = $data = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)): ?>
+            <?php $a=1; while($dt = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)): ?>
             <tr>
               <td><?= $a++ ?></td>
               <td><?= $dt['id_type_transportasi'] ?></td>
