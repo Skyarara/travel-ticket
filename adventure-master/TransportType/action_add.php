@@ -6,7 +6,7 @@ $ket = $_POST['ket'];
 
 $sql = "INSERT INTO type_transportasi(nama_type, keterangan) VALUES('$nama', '$ket')";
 
-$stmt = sqlsrv_query( $conn, $sql );
+$stmt = sqlsrv_query( $conn, $sql );    
 
 if( $stmt === false ) {
     if( ($errors = sqlsrv_errors() ) != null) {
