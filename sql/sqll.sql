@@ -1,5 +1,9 @@
 CREATE TABLE [user] (
+<<<<<<< HEAD
 	id_user INT IDENTITY(1,1) NOT NULL,
+=======
+	id_user varchar NOT NULL,
+>>>>>>> a47a9dba353ae027638a108a18e2d4ae8eb0b90f
 	email varchar(30) NOT NULL UNIQUE,
 	password varchar(100) NOT NULL,
   CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED
@@ -10,8 +14,13 @@ CREATE TABLE [user] (
 )
 GO
 CREATE TABLE [penumpang] (
+<<<<<<< HEAD
 	id_penumpang INT IDENTITY(1,1) NOT NULL,
 	id_user INT NOT NULL,
+=======
+	id_penumpang varchar NOT NULL,
+	id_user varchar NOT NULL,
+>>>>>>> a47a9dba353ae027638a108a18e2d4ae8eb0b90f
 	nama_lengkap varchar(100) NOT NULL,
 	no_telp varchar(15) NOT NULL,
 	email varchar(100) NOT NULL,
@@ -26,10 +35,17 @@ CREATE TABLE [penumpang] (
 )
 GO
 CREATE TABLE [pemesanan] (
+<<<<<<< HEAD
 	id_pemesanan INT IDENTITY(1,1) NOT NULL,
 	id_penumpang integer NOT NULL,
 	id_petugas integer NOT NULL,
 	id_rute integer NOT NULL,
+=======
+	id_pemesanan varchar NOT NULL,
+	id_penumpang varchar NOT NULL,
+	id_petugas varchar NOT NULL,
+	id_rute varchar NOT NULL,
+>>>>>>> a47a9dba353ae027638a108a18e2d4ae8eb0b90f
 	tanggal_pemesanan date NOT NULL,
 	tanggal_berangkat date NOT NULL,
 	total_bayar decimal(20) NOT NULL,
@@ -44,8 +60,13 @@ CREATE TABLE [pemesanan] (
 )
 GO
 CREATE TABLE [rute] (
+<<<<<<< HEAD
 	id_rute INT IDENTITY(1,1) NOT NULL,
 	id_transportasi integer NOT NULL,
+=======
+	id_rute varchar NOT NULL,
+	id_transportasi varchar NOT NULL,
+>>>>>>> a47a9dba353ae027638a108a18e2d4ae8eb0b90f
 	rute_awal varchar(100) NOT NULL,
 	rute_akhir varchar(100) NOT NULL,
 	harga decimal(20) NOT NULL,
@@ -59,8 +80,13 @@ CREATE TABLE [rute] (
 )
 GO
 CREATE TABLE [detail_pemesanan] (
+<<<<<<< HEAD
 	id_detail_pemesanan INT IDENTITY(1,1) NOT NULL,
 	id_pemesanan integer NOT NULL,
+=======
+	id_detail_pemesanan varchar NOT NULL,
+	id_pemesanan varchar NOT NULL,
+>>>>>>> a47a9dba353ae027638a108a18e2d4ae8eb0b90f
 	nama_penumpang varchar(100) NOT NULL,
 	nik integer NOT NULL,
 	kode_kursi varchar(30) NOT NULL,
@@ -73,8 +99,13 @@ CREATE TABLE [detail_pemesanan] (
 )
 GO
 CREATE TABLE [transportasi] (
+<<<<<<< HEAD
 	id_trasportasi INT IDENTITY(1,1) NOT NULL,
 	id_type_transportasi integer NOT NULL,
+=======
+	id_trasportasi varchar NOT NULL,
+	id_type_transportasi varchar NOT NULL,
+>>>>>>> a47a9dba353ae027638a108a18e2d4ae8eb0b90f
 	kode varchar(5) NOT NULL,
 	kelas varchar(30) NOT NULL,
 	jumlah_kursi integer NOT NULL,
@@ -86,8 +117,13 @@ CREATE TABLE [transportasi] (
 
 )
 GO
+<<<<<<< HEAD
 CREATE TABLE [type_transportasi] (
 	id_type_transportasi INT IDENTITY(1,1) NOT NULL,
+=======
+CREATE TABLE [type_ransportasi] (
+	id_type_transportasi varchar NOT NULL,
+>>>>>>> a47a9dba353ae027638a108a18e2d4ae8eb0b90f
 	nama_type varchar(30) NOT NULL,
 	keterangan text NOT NULL,
   CONSTRAINT [PK_TYPE_TRANSPORTASI] PRIMARY KEY CLUSTERED
