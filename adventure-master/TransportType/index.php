@@ -33,7 +33,7 @@
             </td>
             <td><?= $dt['keterangan'] ?></td>
             <td>
-              <a class='btn btn-danger'>Hapus</a>
+              <a href= 'delete_action.php' class='btn btn-danger'>Hapus</a>
               <a class='btn btn-warning'>Edit</a>
             </td>
           </tr>
