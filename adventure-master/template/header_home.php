@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
 		<!-- Mobile Specific Meta -->
@@ -29,8 +29,8 @@
 			<link rel="stylesheet" href="css/main.css">
 		</head>
 		<body>
-			<!-- start banner Area -->
-			<section class="banner-area" id="home">
+<!-- start banner Area -->
+<section class="banner-area" id="home">
 				<!-- Start Header Area -->
 				<header class="default-header">
 					<nav class="navbar navbar-expand-lg  navbar-light">
@@ -46,7 +46,7 @@
 							    <ul class="navbar-nav">
 									<li><a href="#home">Home</a></li>
 									<li><a href="#about">About</a></li>									
-									<li><a href="#">Katalog</a></li>
+									<li><a href="katalog.php">Katalog</a></li>
 									<li><a href="#">Transaksi</a></li>
 									<li><a href="#">Profile</a></li>
 							    </ul>
@@ -57,7 +57,7 @@
 				<!-- End Header Area -->				
 			</section>
 
-			<section class="default-banner active-blog-slider">
+            <section class="default-banner active-blog-slider">
 					<div class="item-slider relative" style="background: url(img/pesawat.jpg);background-size: cover;">
 						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
 						<div class="container">
@@ -102,78 +102,3 @@
 						</div>
 					</div>
 				</section>
-
-			<!-- Start about Area -->
-			<section class="section-gap info-area" id="about">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-40 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Our Team</h1>
-								<p>Kage bunshin no jutsu</p>
-							</div>
-						</div>
-					</div>					
-					<div class="row">
-						<div class="col-sm-4">
-						  <div class="card">
-							<div class="card-body">
-								<img src="img/juan.jpg" class="card-img-top">
-							  	<h5 class="card-title">Gregorious Juan Khawarga</h5>
-							</div>
-						  </div>
-						</div>
-						<div class="col-sm-4">
-						  <div class="card">
-							<div class="card-body">
-							  <img src="img/juan.jpg" class="card-img-top">
-							  <h5 class="card-title">Gregorious Juan Khawarga#2</h5>
-							</div>
-						  </div>
-						</div>
-						<div class="col-sm-4">
-							<div class="card">
-							  <div class="card-body">
-								<img src="img/ezra.jpg" class="card-img-top">
-								<h5 class="card-title">Ezra Gabriel Malachi</h5>
-							  </div>
-							</div>
-						  </div>
-					</div>
-				</div>
-			</section>
-			<!-- End about Area -->
-			
-			<!-- start footer Area -->		
-			<footer class="footer-area section-gap">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-5 col-md-6 col-sm-6">
-							<div class="single-footer-widget">
-								<h6>About Us</h6>
-								<p>
-									3 Remaja yang mengerjakan proyek akhir mata kuliah Database System
-								</p>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            		<p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-            		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</div>
-						</div>								
-					</div>
-				</div>
-			</footer>	
-			<!-- End footer Area -->			
-
-			<script src="js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-			<script src="js/vendor/bootstrap.min.js"></script>
-			<script src="js/jquery.ajaxchimp.min.js"></script>
-			<script src="js/jquery.magnific-popup.min.js"></script>	
-			<script src="js/owl.carousel.min.js"></script>			
-			<script src="js/jquery.sticky.js"></script>
-			<script src="js/slick.js"></script>
-			<script src="js/jquery.counterup.min.js"></script>
-			<script src="js/waypoints.min.js"></script>		
-			<script src="js/main.js"></script>	
-		</body>
-	</html>

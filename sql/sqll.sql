@@ -1,5 +1,5 @@
 CREATE TABLE [user] (
-	id_user varchar NOT NULL,
+	id_user INT IDENTITY(1,1) NOT NULL,
 	email varchar(30) NOT NULL UNIQUE,
 	password varchar(100) NOT NULL,
   CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED
@@ -10,8 +10,8 @@ CREATE TABLE [user] (
 )
 GO
 CREATE TABLE [penumpang] (
-	id_penumpang varchar NOT NULL,
-	id_user varchar NOT NULL,
+	id_penumpang INT IDENTITY(1,1) NOT NULL,
+	id_user INT NOT NULL,
 	nama_lengkap varchar(100) NOT NULL,
 	no_telp varchar(15) NOT NULL,
 	email varchar(100) NOT NULL,
@@ -26,10 +26,10 @@ CREATE TABLE [penumpang] (
 )
 GO
 CREATE TABLE [pemesanan] (
-	id_pemesanan varchar NOT NULL,
-	id_penumpang varchar NOT NULL,
-	id_petugas varchar NOT NULL,
-	id_rute varchar NOT NULL,
+	id_pemesanan INT IDENTITY(1,1) NOT NULL,
+	id_penumpang integer NOT NULL,
+	id_petugas integer NOT NULL,
+	id_rute integer NOT NULL,
 	tanggal_pemesanan date NOT NULL,
 	tanggal_berangkat date NOT NULL,
 	total_bayar decimal(20) NOT NULL,
@@ -44,8 +44,8 @@ CREATE TABLE [pemesanan] (
 )
 GO
 CREATE TABLE [rute] (
-	id_rute varchar NOT NULL,
-	id_transportasi varchar NOT NULL,
+	id_rute INT IDENTITY(1,1) NOT NULL,
+	id_transportasi integer NOT NULL,
 	rute_awal varchar(100) NOT NULL,
 	rute_akhir varchar(100) NOT NULL,
 	harga decimal(20) NOT NULL,
@@ -59,8 +59,8 @@ CREATE TABLE [rute] (
 )
 GO
 CREATE TABLE [detail_pemesanan] (
-	id_detail_pemesanan varchar NOT NULL,
-	id_pemesanan varchar NOT NULL,
+	id_detail_pemesanan INT IDENTITY(1,1) NOT NULL,
+	id_pemesanan integer NOT NULL,
 	nama_penumpang varchar(100) NOT NULL,
 	nik integer NOT NULL,
 	kode_kursi varchar(30) NOT NULL,
@@ -73,8 +73,8 @@ CREATE TABLE [detail_pemesanan] (
 )
 GO
 CREATE TABLE [transportasi] (
-	id_trasportasi varchar NOT NULL,
-	id_type_transportasi varchar NOT NULL,
+	id_trasportasi INT IDENTITY(1,1) NOT NULL,
+	id_type_transportasi integer NOT NULL,
 	kode varchar(5) NOT NULL,
 	kelas varchar(30) NOT NULL,
 	jumlah_kursi integer NOT NULL,
@@ -86,11 +86,11 @@ CREATE TABLE [transportasi] (
 
 )
 GO
-CREATE TABLE [type_ransportasi] (
-	id_type_transportasi varchar NOT NULL,
+CREATE TABLE [type_transportasi] (
+	id_type_transportasi INT IDENTITY(1,1) NOT NULL,
 	nama_type varchar(30) NOT NULL,
 	keterangan text NOT NULL,
-  CONSTRAINT [PK_TYPE_RANSPORTASI] PRIMARY KEY CLUSTERED
+  CONSTRAINT [PK_TYPE_TRANSPORTASI] PRIMARY KEY CLUSTERED
   (
   [id_type_transportasi] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
@@ -98,8 +98,8 @@ CREATE TABLE [type_ransportasi] (
 )
 GO
 CREATE TABLE [petugas] (
-	id_petugas varchar NOT NULL,
-	id_user varchar NOT NULL,
+	id_petugas INT IDENTITY(1,1) NOT NULL,
+	id_user integer NOT NULL,
 	nama_petugas varchar(100) NOT NULL,
   CONSTRAINT [PK_PETUGAS] PRIMARY KEY CLUSTERED
   (
@@ -143,7 +143,7 @@ GO
 ALTER TABLE [detail_pemesanan] CHECK CONSTRAINT [detail_pemesanan_fk0]
 
 GO
-ALTER TABLE [transportasi] WITH CHECK ADD CONSTRAINT [transportasi_fk0] FOREIGN KEY ([id_type_transportasi]) REFERENCES [type_ransportasi]([id_type_transportasi])
+ALTER TABLE [transportasi] WITH CHECK ADD CONSTRAINT [transportasi_fk0] FOREIGN KEY ([id_type_transportasi]) REFERENCES [type_transportasi]([id_type_transportasi])
 ON UPDATE CASCADE
 GO
 ALTER TABLE [transportasi] CHECK CONSTRAINT [transportasi_fk0]
