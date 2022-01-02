@@ -46,8 +46,8 @@ GO
 CREATE TABLE [rute] (
 	id_rute INT IDENTITY(1,1) NOT NULL,
 	id_transportasi integer NOT NULL,
-	rute_awal varchar(100) NOT NULL,
-	rute_akhir varchar(100) NOT NULL,
+	rute_awal INT NOT NULL,
+	rute_akhir INT NOT NULL,
 	harga decimal(20) NOT NULL,
 	waktu_berangkat datetime NOT NULL,
 	waktu_sampai datetime NOT NULL,
