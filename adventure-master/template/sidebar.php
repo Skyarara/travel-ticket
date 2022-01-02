@@ -66,9 +66,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Add and View Data</h6>
-                        <a class="collapse-item" href="transport type view+add.html">Tipe Transportasi</a>
-                        <a class="collapse-item" href="#">Tabel lain</a>
-                        <a class="collapse-item" href="#">Tabel lain</a>
+                        <a class="collapse-item" href="../TransportType/index.php">Tipe Transportasi</a>
+                        <a class="collapse-item" href="../transport/index.php">Transportasi</a>
+                        <a class="collapse-item" href="../route/index.php">Tabel lain</a>
                         <a class="collapse-item" href="#">Tabel lain</a>
                         <a class="collapse-item" href="#">Tabel lain</a>
                     </div>
