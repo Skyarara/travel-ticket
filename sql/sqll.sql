@@ -49,7 +49,7 @@ CREATE TABLE [tiket] (
 	harga decimal(20) NOT NULL,
 	waktu_berangkat datetime NOT NULL,
 	waktu_sampai datetime NOT NULL,
-	sisa_kursi INT NOT NULL,
+	sisa_kursi INT NULL,
   CONSTRAINT [PK_RUTE] PRIMARY KEY CLUSTERED
   (
   [id_tiket] ASC
@@ -74,6 +74,7 @@ GO
 CREATE TABLE [transportasi] (
 	id_trasportasi INT IDENTITY(1,1) NOT NULL,
 	id_type_transportasi integer NOT NULL,
+	nama_pesawat varchar(255) NOT NULL,
 	kode varchar(5) NOT NULL,
 	jumlah_kursi integer NOT NULL,
   CONSTRAINT [PK_TRANSPORTASI] PRIMARY KEY CLUSTERED

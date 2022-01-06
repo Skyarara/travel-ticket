@@ -2,11 +2,12 @@
     require_once '../../conn.php';
     require_once '../template/sidebar.php';
     require_once '../template/header.php';
-    $sql = "SELECT id_rute, a.city_name awal, b.city_name akhir, harga, waktu_berangkat, waktu_sampai
-            FROM rute
-            JOIN cities a ON a.city_id = rute.rute_awal
-            JOIN cities b ON b.city_id = rute.rute_akhir";
+    $sql = "SELECT id_tiket, a.city_name awal, b.city_name akhir, harga, waktu_berangkat, waktu_sampai
+            FROM tiket
+            JOIN cities a ON a.city_id = tiket.rute_awal
+            JOIN cities b ON b.city_id = tiket.rute_akhir";
     $stmt = sqlsrv_query($conn, $sql);
+
 ?>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -39,9 +40,9 @@
                         <td><?= date_format($dt['waktu_berangkat'], 'd M Y | H:i') ?></td>
                         <td><?= date_format($dt['waktu_sampai'], 'd M Y | H:i') ?></td>
                         <td>
-                            <a href="delete_action.php?id=<?= $dt['id_rute'] ?>" class='btn btn-danger'>Hapus</a>
-                            <a href="edit.php?id=<?= $dt['id_rute'] ?>" class='btn btn-warning'>Ubah</a>
-                            <a href="detail.php?id=<?= $dt['id_rute'] ?>" class='btn btn-info'>View</a>
+                            <a href="action_delete.php?id=<?= $dt['id_tiket'] ?>" class='btn btn-danger'>Hapus</a>
+                            <a href="edit.php?id=<?= $dt['id_tiket'] ?>" class='btn btn-warning'>Ubah</a>
+                            <a href="detail.php?id=<?= $dt['id_tiket'] ?>" class='btn btn-info'>View</a>
                         </td>
                     </tr>
                     <?php endwhile; ?>

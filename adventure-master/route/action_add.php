@@ -12,7 +12,7 @@ $waktu_sampai = $date2->format('Y-m-d H:i:s');
 $sisa = 10;
 
 $sql = "INSERT INTO tiket(id_transportasi, rute_awal, rute_akhir, harga, waktu_berangkat,waktu_sampai,sisa_kursi) 
-        VALUES('$type', '$rute_awal', '$rute_akhir', '$harga', '$waktu_berangkat', '$waktu_sampai', $sisa)";
+        VALUES('$type', '$rute_awal', '$rute_akhir', '$harga', '$waktu_berangkat', '$waktu_sampai', '$sisa')";
 
 $stmt = sqlsrv_query( $conn, $sql );
 

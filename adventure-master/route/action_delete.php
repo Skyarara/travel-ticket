@@ -2,7 +2,7 @@
 require_once '../../conn.php';
 
 $id = $_GET['id'];
-$sql = "DELETE FROM rute WHERE id_rute= $id";
+$sql = "DELETE FROM tiket WHERE id_tiket= $id";
 
 $stmt = sqlsrv_query( $conn, $sql );
 echo '<script type="text/javascript">'; 

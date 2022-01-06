@@ -103,7 +103,6 @@
             required><?= $data['keterangan'] ?></textarea>
     </div>
     <button type="submit" class="btn btn-warning">Ubah</button>
-    >>>>>>> 7989a057276342f31e38683a710ec36891cd1455
     </form>
 </div>
 
