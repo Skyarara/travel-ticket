@@ -5,10 +5,6 @@ $id = $_GET['id'];
 $sql = "DELETE FROM transportasi WHERE id_trasportasi= $id";
 
 $stmt = sqlsrv_query( $conn, $sql );
-echo '<script type="text/javascript">'; 
-echo 'alert("Data sudah dihapus");'; 
-echo 'window.location.href = "index.php";';
-echo '</script>';
 
 if( $stmt === false ) {
     if( ($errors = sqlsrv_errors() ) != null) {
@@ -16,3 +12,7 @@ if( $stmt === false ) {
         exit;
     }
 }
+echo '<script type="text/javascript">'; 
+echo 'alert("Data sudah dihapus");'; 
+echo 'window.location.href = "index.php";';
+echo '</script>';

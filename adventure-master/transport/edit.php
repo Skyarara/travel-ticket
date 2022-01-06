@@ -26,8 +26,20 @@ $data = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC);
         <form action="edit_action.php" method="POST">
             <input type="hidden" value='<?= $id ?>' name='id'>
             <div class="form-group">
-                <label>Nama Tipe</label>
-                <input type="text" class='form-control' value='<?= $data['nama_type'] ?>' disabled>
+                <label>Tipe</label>
+                <select name="type" class='form-control' required>
+                    <option value="">--- Pilih Kelas ---</option>
+                    <?php while($dt = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)): ?>
+                    <option value="<?= $dt['id_type_transportasi'] ?>"
+                        <?= $data['id_type_transportasi'] == $dt['id_type_transportasi'] ? 'selected' : ''?>>
+                        <?= $dt['nama_type'] ?>
+                    </option>
+                    <?php endwhile;?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Nama Pesawat</label>
+                <input type="text" name='nama' class='form-control' value='<?= $data['nama_pesawat'] ?>' required>
             </div>
             <div class="form-group">
                 <label>Kode</label>
@@ -36,11 +48,6 @@ $data = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC);
             <div class="form-group">
                 <label>JumlahKursi</label>
                 <input type="number" name='kursi' class='form-control' value='<?= $data['jumlah_kursi'] ?>' required>
-            </div>
-            <div class="form-group">
-                <label>Keterangan</label>
-                <textarea name="ket" placeholder="Keterangan" class="form-control" cols="30" rows="10"
-                    readonly><?= $data['keterangan'] ?></textarea>
             </div>
             <button type="submit" class="btn btn-warning">Ubah</button>
         </form>

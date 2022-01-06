@@ -10,24 +10,29 @@
     $stmt2 = sqlsrv_query($conn, $sql2);
     $stmt3 = sqlsrv_query($conn, $sql2);
 
-    $id_rute = $_GET['id'];
-    $sql4 = "SELECT * FROM rute WHERE id_rute= $id_rute";
+    $id = $_GET['id'];
+    $sql4 = "SELECT * FROM tiket WHERE id_tiket= $id";
     $stmt4 = sqlsrv_query($conn, $sql4);
     $data = sqlsrv_fetch_array($stmt4, SQLSRV_FETCH_ASSOC);
-    
-    var_dump($data);
-    exit;
+
+    $waktu_berangkat = date_format($data['waktu_berangkat'], "Y/m/d H:i:s");
+    $waktu_berangkat = date('Y-m-d\TH:i:s', strtotime($waktu_berangkat));
+
+    $waktu_sampai = date_format($data['waktu_sampai'], "Y/m/d H:i:s");
+    $waktu_sampai = date('Y-m-d\TH:i:s', strtotime($waktu_sampai));
+
 ?>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Tambah Rute</h1>
+    <h1 class="h3 mb-0 text-gray-800">Ubah Tiket</h1>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Tambah Rute</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Ubah Tiket</h6>
     </div>
     <div class="card-body">
-        <form action="action_add.php" method="POST">
+        <form action="action_edit.php" method="POST">
+            <input type="hidden" name='id' value='<?= $id ?>'>
             <div class="form-group">
                 <label>Nama Pesawat</label>
                 <select name="type_tras" class='form-control js2' id='transportasi' required>
@@ -35,22 +40,22 @@
                     <?php while($dt = sqlsrv_fetch_array($stmt1, SQLSRV_FETCH_ASSOC)): ?>
                     <option value="<?= $dt['id_trasportasi'] ?>"
                         <?= $dt['id_trasportasi'] == $data['id_transportasi'] ? 'selected="selected"' : ''?>>
-                        <?= $dt['nama_type'] ?>
+                        <?= $dt['nama_pesawat'] ?> || <?= $dt['nama_type'] ?>
                     </option>
                     <?php endwhile;?>
                 </select>
             </div>
             <div class="form-group">
-                <<<<<<< HEAD <label>Rute Awal</label>
-                    <select name="rute_awal" class='form-control js2' required>
-                        <option value="">--- Pilih Rute Awal ---</option>
-                        <?php while($dt = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC)): ?>
-                        <option value="<?= $dt['city_id'] ?>"
-                            <?= $dt['city_id'] == $data['rute_awal'] ? 'selected="selected"' : ''?>>
-                            <?= $dt['prov_name'].' | '. $dt['city_name'] ?>
-                        </option>
-                        <?php endwhile;?>
-                    </select>
+                <label>Rute Awal</label>
+                <select name="rute_awal" class='form-control js2' required>
+                    <option value="">--- Pilih Rute Awal ---</option>
+                    <?php while($dt = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC)): ?>
+                    <option value="<?= $dt['city_id'] ?>"
+                        <?= $dt['city_id'] == $data['rute_awal'] ? 'selected="selected"' : ''?>>
+                        <?= $dt['prov_name'].' | '. $dt['city_name'] ?>
+                    </option>
+                    <?php endwhile;?>
+                </select>
             </div>
             <div class="form-group">
                 <label>Rute Akhir</label>
@@ -71,42 +76,27 @@
             </div>
             <div class="form-group">
                 <label>Waktu Berangkat</label>
-                <input type="datetime-local" name='waktu_berangkat' class='form-control' value='' required>
+                <input type="datetime-local" name='waktu_berangkat' class='form-control' value='<?= $waktu_berangkat ?>'
+                    required>
             </div>
 
             <div class="form-group">
                 <label>Waktu Sampai</label>
-                <input type="datetime-local" name=' waktu_sampai' class='form-control' required>
+                <input type="datetime-local" name=' waktu_sampai' class='form-control' value='<?= $waktu_sampai ?>'
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Sisa Kursi</label>
+                <input type="number" name=' sisa' class='form-control' value='<?= $data['sisa_kursi'] ?>' required>
             </div>
 
             <button type="submit" class="btn btn-warning">Edit</button>
-            =======
-            <label>Kode</label>
-            <input type="text" name='kode' class='form-control' value='<?= $data['kode'] ?>' required>
+
+        </form>
     </div>
-    <div class="form-group">
-        <label>Kelas</label>
-        <select name="kelas" class='form-control' required>
-            <option value="">--- Pilih Kelas ---</option>
-            <option value="Bisnis" <?= $data['kelas'] == 'Bisnis' ? 'selected' : '' ?>>Bisnis</option>
-            <option value="Ekonomi" <?= $data['kelas'] == 'Ekonomi' ? 'selected' : '' ?>>Ekonomi</option>
-            <option value="Biasa" <?= $data['kelas'] == 'Biasa' ? 'selected' : '' ?>>Biasa</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label>JumlahKursi</label>
-        <input type="number" name='kursi' class='form-control' value='<?= $data['jumlah_kursi'] ?>' required>
-    </div>
-    <div class="form-group">
-        <label>Keterangan</label>
-        <textarea name="ket" placeholder="Keterangan" class="form-control" cols="30" rows="10"
-            required><?= $data['keterangan'] ?></textarea>
-    </div>
-    <button type="submit" class="btn btn-warning">Ubah</button>
-    </form>
-</div>
 
 
-<?php
+    <?php
     require_once '../template/footer.php';
 ?>

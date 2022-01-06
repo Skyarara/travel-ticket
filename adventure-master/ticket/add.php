@@ -13,11 +13,11 @@
 ?>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Tambah Rute</h1>
+    <h1 class="h3 mb-0 text-gray-800">Tambah Tiket</h1>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Tambah Rute</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Tambah Tiket</h6>
     </div>
     <div class="card-body">
         <form action="action_add.php" method="POST">
@@ -26,7 +26,9 @@
                 <select name="type_tras" class='form-control js2' required>
                     <option value="">--- Pilih Transportasi ---</option>
                     <?php while($dt = sqlsrv_fetch_array($stmt1, SQLSRV_FETCH_ASSOC)): ?>
-                    <option value="<?= $dt['id_trasportasi'] ?>"><?= $dt['nama_type'] ?></option>
+                    <option value="<?= $dt['id_trasportasi'] ?>">
+                        <?= $dt['nama_pesawat'] ?> || <?= $dt['nama_type'] ?>
+                    </option>
                     <?php endwhile;?>
                 </select>
             </div>

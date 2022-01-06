@@ -21,9 +21,9 @@
             <table class="table table-striped custom-table">
                 <thead>
                     <th scope="col">No</th>
-                    <th scope="col">Nama Tipe</th>
+                    <th scope="col">Nama Pesawat</th>
                     <th scope="col">Kode</th>
-                    <th scope="col">Kelas</th>
+                    <th scope="col">Tipe</th>
                     <th scope="col">Jumlah Kursi</th>
                     <th scope="col">Aksi</th>
                 </thead>
@@ -31,7 +31,7 @@
                     <?php $a=1; while($dt = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)): ?>
                     <tr>
                         <td><?= $a++ ?></td>
-                        <td><?= $dt['nama_type'] ?></td>
+                        <td><?= $dt['nama_pesawat'] ?></td>
                         <td><?= $dt['kode'] ?></td>
                         <td><?= $dt['nama_type'] ?></td>
                         <td><?= $dt['jumlah_kursi'] ?></td>

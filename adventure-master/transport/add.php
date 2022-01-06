@@ -16,13 +16,17 @@ require_once '../template/header.php';
     <div class="card-body">
         <form action="action_add.php" method="POST">
             <div class="form-group">
-                <label>Nama Tipe</label>
+                <label>Tipe</label>
                 <select name="type" class='form-control' required>
                     <option value="">--- Pilih Kelas ---</option>
                     <?php while($dt = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)): ?>
                     <option value="<?= $dt['id_type_transportasi'] ?>"><?= $dt['nama_type'] ?></option>
                     <?php endwhile;?>
                 </select>
+            </div>
+            <div class="form-group">
+                <label>Nama Pesawat</label>
+                <input type="text" name='nama' class='form-control' required>
             </div>
             <div class="form-group">
                 <label>Kode</label>

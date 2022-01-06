@@ -4,9 +4,10 @@ require_once '../../conn.php';
 $id = $_POST['id'];
 $kode = $_POST['kode'];
 $kursi = $_POST['kursi'];
+$nama = $_POST['nama'];
+$type = $_POST['type'];
 
-
-$sql = "UPDATE transportasi SET  kode = '$kode', jumlah_kursi='$kursi' WHERE id_trasportasi = $id";
+$sql = "UPDATE transportasi SET id_type_transportasi='$type', kode='$kode', jumlah_kursi='$kursi', nama_pesawat='$nama' WHERE id_trasportasi = $id";
 
 $stmt = sqlsrv_query( $conn, $sql );   
 
