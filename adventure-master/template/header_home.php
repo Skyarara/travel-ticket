@@ -45,7 +45,7 @@
 							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 							    <ul class="navbar-nav">
 									<li><a href="index.php">Home</a></li>
-									<li><a href="#about">About</a></li>									
+									<li><a href="index.php#about">About</a></li>									
 									<li><a href="katalog.php">Katalog</a></li>
 									<li><a href="#">Transaksi</a></li>
 									<li><a href="user_profile.php">Profile</a></li>
@@ -58,7 +58,7 @@
 				<!-- End Header Area -->				
 			</section>
 
-            <section class="default-banner active-blog-slider">
+            <section class="default-banner">
 					<div class="item-slider relative" style="background: url(img/pesawat.jpg);background-size: cover;">
 						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
 						<div class="container">
@@ -66,37 +66,8 @@
 								<div class="col-md-10 col-12">
 									<div class="banner-content text-center">
 										<h4 class="text-white mb-20 text-uppercase">Pergi dengan pesawat</h4>
-										<h1 class="text-uppercase text-white">Cepat</h1>
+										<h1 class="text-uppercase text-white">Aman Cepat Nyaman</h1>
 										<p class="text-white">Bekerja sama dengan berbagai maskapai di Indonesia</p>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-					<div class="item-slider relative" style="background: url(img/kereta.jpg);background-size: cover;">
-						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
-						<div class="container">
-							<div class="row fullscreen justify-content-center align-items-center">
-								<div class="col-md-10 col-12">
-									<div class="banner-content text-center">
-										<h4 class="text-white mb-20 text-uppercase">Pergi dengan kereta</h4>
-										<h1 class="text-uppercase text-white">Aman</h1>
-										<p class="text-white">Bekerja sama dengan PT Kereta Api Indonesia</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item-slider relative" style="background: url(img/bis.jpg);background-size: cover;">
-						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
-						<div class="container">
-							<div class="row fullscreen justify-content-center align-items-center">
-								<div class="col-md-10 col-12">
-									<div class="banner-content text-center">
-										<h4 class="text-white mb-20 text-uppercase">Pergi dengan Bis</h4>
-										<h1 class="text-uppercase text-white">Nyaman</h1>
-										<p class="text-white">Bekerja sama dengan berbagai armada</p>
 									</div>
 								</div>
 							</div>
