@@ -15,7 +15,7 @@ CREATE TABLE [penumpang] (
 	nama_lengkap varchar(100) NOT NULL,
 	no_telp varchar(15) NOT NULL,
 	email varchar(100) NOT NULL,
-	jk varchar(1) NOT NULL,
+	jenis_kelamin varchar(1) NOT NULL,
 	tgl_lahir date NOT NULL,
 	asal_kota varchar(30) NOT NULL,
   CONSTRAINT [PK_PENUMPANG] PRIMARY KEY CLUSTERED
@@ -63,7 +63,7 @@ CREATE TABLE [detail_pemesanan] (
 	nama_penumpang varchar(100) NOT NULL,
 	nik integer NOT NULL,
 	kode_kursi varchar(30) NOT NULL,
-	jk varchar(1) NOT NULL,
+	jenis_kelamin varchar(1) NOT NULL,
   CONSTRAINT [PK_DETAIL_PEMESANAN] PRIMARY KEY CLUSTERED
   (
   [id_detail_pemesanan] ASC

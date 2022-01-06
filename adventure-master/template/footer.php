@@ -37,9 +37,9 @@
             </div>
 
             <script src="../js/jquery-3.3.1.min.js"></script>
+            <!-- <script src="../js/main.js"></script>
             <script src="../js/popper.min.js"></script>
-            <script src="../js/bootstrap.min.js"></script>
-            <script src="../js/main.js"></script>
+            <script src="../js/bootstrap.min.js"></script> -->
 
             <!-- Bootstrap core JavaScript-->
             <script src="../vendor/jquery/jquery.min.js"></script>
@@ -52,11 +52,11 @@
             <script src="../js/sb-admin-2.min.js"></script>
 
             <!-- Page level plugins -->
-            <script src="../vendor/chart.js/Chart.min.js"></script>
+            <!-- <script src="../vendor/chart.js/Chart.min.js"></script> -->
 
             <!-- Page level custom scripts -->
-            <script src="../js/demo/chart-area-demo.js"></script>
-            <script src="../js/demo/chart-pie-demo.js"></script>
+            <!-- <script src="../js/demo/chart-area-demo.js"></script>
+            <script src="../js/demo/chart-pie-demo.js"></script> -->
 
             <!-- Page level plugins -->
             <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
