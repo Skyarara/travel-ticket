@@ -41,16 +41,16 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>Rute Awal</label>
-                <select name="rute_awal" class='form-control js2' required>
-                    <option value="">--- Pilih Rute Awal ---</option>
-                    <?php while($dt = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC)): ?>
-                    <option value="<?= $dt['city_id'] ?>"
-                        <?= $dt['city_id'] == $data['rute_awal'] ? 'selected="selected"' : ''?>>
-                        <?= $dt['prov_name'].' | '. $dt['city_name'] ?>
-                    </option>
-                    <?php endwhile;?>
-                </select>
+                <<<<<<< HEAD <label>Rute Awal</label>
+                    <select name="rute_awal" class='form-control js2' required>
+                        <option value="">--- Pilih Rute Awal ---</option>
+                        <?php while($dt = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC)): ?>
+                        <option value="<?= $dt['city_id'] ?>"
+                            <?= $dt['city_id'] == $data['rute_awal'] ? 'selected="selected"' : ''?>>
+                            <?= $dt['prov_name'].' | '. $dt['city_name'] ?>
+                        </option>
+                        <?php endwhile;?>
+                    </select>
             </div>
             <div class="form-group">
                 <label>Rute Akhir</label>
@@ -80,10 +80,34 @@
             </div>
 
             <button type="submit" class="btn btn-warning">Edit</button>
-        </form>
+            =======
+            <label>Kode</label>
+            <input type="text" name='kode' class='form-control' value='<?= $data['kode'] ?>' required>
     </div>
+    <div class="form-group">
+        <label>Kelas</label>
+        <select name="kelas" class='form-control' required>
+            <option value="">--- Pilih Kelas ---</option>
+            <option value="Bisnis" <?= $data['kelas'] == 'Bisnis' ? 'selected' : '' ?>>Bisnis</option>
+            <option value="Ekonomi" <?= $data['kelas'] == 'Ekonomi' ? 'selected' : '' ?>>Ekonomi</option>
+            <option value="Biasa" <?= $data['kelas'] == 'Biasa' ? 'selected' : '' ?>>Biasa</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>JumlahKursi</label>
+        <input type="number" name='kursi' class='form-control' value='<?= $data['jumlah_kursi'] ?>' required>
+    </div>
+    <div class="form-group">
+        <label>Keterangan</label>
+        <textarea name="ket" placeholder="Keterangan" class="form-control" cols="30" rows="10"
+            required><?= $data['keterangan'] ?></textarea>
+    </div>
+    <button type="submit" class="btn btn-warning">Ubah</button>
+    >>>>>>> 7989a057276342f31e38683a710ec36891cd1455
+    </form>
+</div>
 
 
-    <?php
+<?php
     require_once '../template/footer.php';
 ?>
