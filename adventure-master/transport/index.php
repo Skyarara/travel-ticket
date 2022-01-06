@@ -33,7 +33,7 @@
                         <td><?= $a++ ?></td>
                         <td><?= $dt['nama_type'] ?></td>
                         <td><?= $dt['kode'] ?></td>
-                        <td><?= $dt['kelas'] ?></td>
+                        <td><?= $dt['nama_type'] ?></td>
                         <td><?= $dt['jumlah_kursi'] ?></td>
                         <td>
                             <a href="delete_action.php?id=<?= $dt['id_trasportasi'] ?>" class='btn btn-danger'>Hapus</a>

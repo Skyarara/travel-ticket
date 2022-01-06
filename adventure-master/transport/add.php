@@ -29,22 +29,8 @@ require_once '../template/header.php';
                 <input type="text" name='kode' class='form-control' required>
             </div>
             <div class="form-group">
-                <label>Kelas</label>
-                <select name="kelas" class='form-control' required>
-                    <option value="">--- Pilih Kelas ---</option>
-                    <option value="Bisnis">Bisnis</option>
-                    <option value="Ekonomi">Ekonomi</option>
-                    <option value="Biasa">Biasa</option>
-                </select>
-            </div>
-            <div class="form-group">
                 <label>JumlahKursi</label>
                 <input type="number" name='kursi' class='form-control' required>
-            </div>
-            <div class="form-group">
-                <label>Keterangan</label>
-                <textarea name="ket" placeholder="Keterangan" class="form-control" cols="30" rows="10"
-                    required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Tambah</button>
         </form>

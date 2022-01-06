@@ -2,8 +2,10 @@
     require_once '../../conn.php';
     require_once '../template/sidebar.php';
     require_once '../template/header.php';
-    $sql = "SELECT * FROM rute JOIN transportasi ON rute.id_transportasi = transportasi.id_trasportasi JOIN type_transportasi 
-    ON transportasi.id_type_transportasi = type_transportasi.id_type_transportasi";
+    $sql = "SELECT id_rute, a.city_name awal, b.city_name akhir, harga, waktu_berangkat, waktu_sampai
+            FROM rute
+            JOIN cities a ON a.city_id = rute.rute_awal
+            JOIN cities b ON b.city_id = rute.rute_akhir";
     $stmt = sqlsrv_query($conn, $sql);
 ?>
 <!-- Page Heading -->
@@ -31,11 +33,11 @@
                     <?php $a=1; while($dt = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)): ?>
                     <tr>
                         <td><?= $a++ ?></td>
-                        <td><?= $dt['rute_awal'] ?></td>
-                        <td><?= $dt['rute_akhir'] ?></td>
+                        <td><?= $dt['awal'] ?></td>
+                        <td><?= $dt['akhir'] ?></td>
                         <td><?= $dt['harga'] ?></td>
-                        <td><?= $dt['waktu_berangkat'] ?></td>
-                        <td><?= $dt['waktu_sampai'] ?></td>
+                        <td><?= date_format($dt['waktu_berangkat'], 'd M Y | H:i') ?></td>
+                        <td><?= date_format($dt['waktu_sampai'], 'd M Y | H:i') ?></td>
                         <td>
                             <a href="delete_action.php?id=<?= $dt['id_rute'] ?>" class='btn btn-danger'>Hapus</a>
                             <a href="edit.php?id=<?= $dt['id_rute'] ?>" class='btn btn-warning'>Ubah</a>

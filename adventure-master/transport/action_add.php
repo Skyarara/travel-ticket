@@ -3,12 +3,10 @@ require_once '../../conn.php';
 
 $type = $_POST['type'];
 $kode = $_POST['kode'];
-$kelas = $_POST['kelas'];
 $kursi = $_POST['kursi'];
-$ket = $_POST['ket'];
 
-$sql = "INSERT INTO transportasi(id_type_transportasi, kode, kelas, jumlah_kursi, keterangan) 
-        VALUES('$type', '$kode', '$kelas', '$kursi', '$ket')";
+$sql = "INSERT INTO transportasi(id_type_transportasi, kode, jumlah_kursi) 
+        VALUES('$type', '$kode', '$kursi')";
 
 $stmt = sqlsrv_query( $conn, $sql );
 

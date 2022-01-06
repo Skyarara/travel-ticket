@@ -29,12 +29,10 @@ CREATE TABLE [pemesanan] (
 	id_pemesanan INT IDENTITY(1,1) NOT NULL,
 	id_penumpang integer NOT NULL,
 	id_petugas integer NOT NULL,
-	id_rute integer NOT NULL,
+	id_tiket integer NOT NULL,
 	tanggal_pemesanan date NOT NULL,
-	tanggal_berangkat date NOT NULL,
 	total_bayar decimal(20) NOT NULL,
 	jumlah_penumpang integer NOT NULL,
-	bukti_bayar text NOT NULL,
 	status bit NOT NULL,
   CONSTRAINT [PK_PEMESANAN] PRIMARY KEY CLUSTERED
   (
@@ -43,17 +41,18 @@ CREATE TABLE [pemesanan] (
 
 )
 GO
-CREATE TABLE [rute] (
-	id_rute INT IDENTITY(1,1) NOT NULL,
+CREATE TABLE [tiket] (
+	id_tiket INT IDENTITY(1,1) NOT NULL,
 	id_transportasi integer NOT NULL,
 	rute_awal INT NOT NULL,
 	rute_akhir INT NOT NULL,
 	harga decimal(20) NOT NULL,
 	waktu_berangkat datetime NOT NULL,
 	waktu_sampai datetime NOT NULL,
+	sisa_kursi INT NOT NULL,
   CONSTRAINT [PK_RUTE] PRIMARY KEY CLUSTERED
   (
-  [id_rute] ASC
+  [id_tiket] ASC
   ) WITH (IGNORE_DUP_KEY = OFF)
 
 )
@@ -76,9 +75,7 @@ CREATE TABLE [transportasi] (
 	id_trasportasi INT IDENTITY(1,1) NOT NULL,
 	id_type_transportasi integer NOT NULL,
 	kode varchar(5) NOT NULL,
-	kelas varchar(30) NOT NULL,
 	jumlah_kursi integer NOT NULL,
-	keterangan text NOT NULL,
   CONSTRAINT [PK_TRANSPORTASI] PRIMARY KEY CLUSTERED
   (
   [id_trasportasi] ASC
@@ -125,16 +122,16 @@ ON UPDATE CASCADE
 GO
 ALTER TABLE [pemesanan] CHECK CONSTRAINT [pemesanan_fk1]
 GO
-ALTER TABLE [pemesanan] WITH CHECK ADD CONSTRAINT [pemesanan_fk2] FOREIGN KEY ([id_rute]) REFERENCES [rute]([id_rute])
+ALTER TABLE [pemesanan] WITH CHECK ADD CONSTRAINT [pemesanan_fk2] FOREIGN KEY ([id_tiket]) REFERENCES [tiket]([id_tiket])
 ON UPDATE CASCADE
 GO
 ALTER TABLE [pemesanan] CHECK CONSTRAINT [pemesanan_fk2]
 GO
 
-ALTER TABLE [rute] WITH CHECK ADD CONSTRAINT [rute_fk0] FOREIGN KEY ([id_transportasi]) REFERENCES [transportasi]([id_trasportasi])
+ALTER TABLE [tiket] WITH CHECK ADD CONSTRAINT [tiket_fk0] FOREIGN KEY ([id_transportasi]) REFERENCES [transportasi]([id_trasportasi])
 ON UPDATE CASCADE
 GO
-ALTER TABLE [rute] CHECK CONSTRAINT [rute_fk0]
+ALTER TABLE [tiket] CHECK CONSTRAINT [tiket_fk0]
 GO
 
 ALTER TABLE [detail_pemesanan] WITH CHECK ADD CONSTRAINT [detail_pemesanan_fk0] FOREIGN KEY ([id_pemesanan]) REFERENCES [pemesanan]([id_pemesanan])
