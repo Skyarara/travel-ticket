@@ -48,7 +48,8 @@
 									<li><a href="#about">About</a></li>									
 									<li><a href="katalog.php">Katalog</a></li>
 									<li><a href="#">Transaksi</a></li>
-									<li><a href="#">Profile</a></li>
+									<li><a href="user_profile.php">Profile</a></li>
+									<li><a href="login+register.php">Login</a></li>
 							    </ul>
 							  </div>						
 						</div>

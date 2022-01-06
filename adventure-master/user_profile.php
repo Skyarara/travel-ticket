@@ -12,7 +12,7 @@
     <div class="row mt-2">
         <div class="col-md-6"><label class="labels">Nama</label><input type="text" class="form-control" placeholder="Nama" value=""></div>
         <div class="col-md-6"><label class="labels">Jenis Kelamin</label>
-            <select name="Tujuan" class="form-control" >
+            <select name="Gender" class="form-control" >
                 <option value="" selected disabled hidden>Jenis Kelamin</option>
                 <option value="Pria">Pria</option>
                 <option value="Wanita">Wanita</option>
