@@ -54,7 +54,7 @@
 							<li><a href="katalog.php">Katalog</a></li>
 							<li><a href="#">Transaksi</a></li>
 							<li><a href="user_profile.php">Profile</a></li>
-							<li><a href="login+register.php">Login</a></li>
+							<li><a href="auth/login.php">Login</a></li>
 						</ul>
 					</div>
 				</div>

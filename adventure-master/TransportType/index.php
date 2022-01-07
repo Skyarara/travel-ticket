@@ -34,7 +34,7 @@
             <td><?= $dt['keterangan'] ?></td>
             <td>
               <a href="delete_action.php?id_type='<?= $dt['id_type_transportasi'] ?>'" class='btn btn-danger'>Hapus</a>
-              <a href="edit.php?id_type='<?= $dt['id_type_transportasi'] ?>'"class='btn btn-warning'>Edit</a>
+              <a href="edit.php?id_type='<?= $dt['id_type_transportasi'] ?>'" class='btn btn-warning'>Edit</a>
             </td>
           </tr>
           <?php endwhile; ?>
@@ -44,9 +44,6 @@
   </div>
 </div>
 </div>
-</body>
-
-</html>
 
 <?php
   require_once '../template/footer.php';

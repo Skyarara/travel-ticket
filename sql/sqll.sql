@@ -17,7 +17,6 @@ CREATE TABLE [penumpang] (
 	email varchar(100) NOT NULL,
 	jenis_kelamin varchar(1) NOT NULL,
 	tgl_lahir date NOT NULL,
-	asal_kota varchar(30) NOT NULL,
   CONSTRAINT [PK_PENUMPANG] PRIMARY KEY CLUSTERED
   (
   [id_penumpang] ASC
