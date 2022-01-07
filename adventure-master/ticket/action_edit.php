@@ -10,7 +10,7 @@ $date = new DateTime($_POST['waktu_berangkat']);
 $waktu_berangkat = $date->format('Y-m-d H:i:s');
 $date2 = new DateTime($_POST['waktu_sampai']);
 $waktu_sampai = $date2->format('Y-m-d H:i:s');
-$sisa = 10;
+$sisa = $_POST['sisa'];
 
 $sql = "UPDATE tiket SET id_transportasi='$type', rute_awal='$rute_awal', rute_akhir='$rute_akhir', 
         harga='$harga', waktu_berangkat='$waktu_berangkat', waktu_sampai='$waktu_sampai', sisa_kursi='$sisa'
