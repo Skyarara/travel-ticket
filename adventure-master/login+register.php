@@ -259,7 +259,7 @@ footer a {
     text-decoration: none;
 }
 </style>
-
+<h2><a href="index.php">Home</a></h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="#">
