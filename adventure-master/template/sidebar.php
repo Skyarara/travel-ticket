@@ -74,6 +74,7 @@
                         class="fas fa fa-plane"></i><span>Tranportasi</span></a>
                 <a class="nav-link collapsed" href="../ticket/index.php"><i
                         class="fas fa-ticket-alt"></i><span>Tiket</span></a>
+                <a class="nav-link collapsed" href="../user/index.php"><i class="fas fa-users"></i><span>User</span></a>
                 <a class="nav-link collapsed" href="#"><i class="far fa-stop-circle"></i><span>Tabel Lain</span></a>
                 <a class="nav-link collapsed" href="#"><i class="far fa-stop-circle"></i><span>Tabel Lain</span></a>
                 <a class="nav-link collapsed" href="#"><i class="far fa-stop-circle"></i><span>Tabel Lain</span></a>

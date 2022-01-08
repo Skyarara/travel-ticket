@@ -14,7 +14,6 @@ CREATE TABLE [penumpang] (
 	id_user INT NOT NULL,
 	nama_lengkap varchar(100) NOT NULL,
 	no_telp varchar(15) NOT NULL,
-	email varchar(100) NOT NULL,
 	jenis_kelamin varchar(1) NOT NULL,
 	tgl_lahir date NOT NULL,
   CONSTRAINT [PK_PENUMPANG] PRIMARY KEY CLUSTERED
@@ -113,12 +112,12 @@ ALTER TABLE [penumpang] CHECK CONSTRAINT [penumpang_fk0]
 GO
 
 ALTER TABLE [pemesanan] WITH CHECK ADD CONSTRAINT [pemesanan_fk0] FOREIGN KEY ([id_penumpang]) REFERENCES [penumpang]([id_penumpang])
-ON UPDATE CASCADE
+ON UPDATE CASCADE DELETE SET  NULL
 GO
 ALTER TABLE [pemesanan] CHECK CONSTRAINT [pemesanan_fk0]
 GO
 ALTER TABLE [pemesanan] WITH CHECK ADD CONSTRAINT [pemesanan_fk1] FOREIGN KEY ([id_petugas]) REFERENCES [petugas]([id_petugas])
-ON UPDATE CASCADE
+ON UPDATE CASCADE DELETE SET  NULL
 GO
 ALTER TABLE [pemesanan] CHECK CONSTRAINT [pemesanan_fk1]
 GO

@@ -31,8 +31,8 @@ $no_telp = $_POST['no_telp'];
 $gender = $_POST['gender'];
 $tgl_lahir = $_POST['tgl_lahir'];
 
-$sql3 = "INSERT INTO penumpang (id_user, nama_lengkap, no_telp, email, jenis_kelamin, tgl_lahir) 
-        VALUES('$id_user[0]', '$nama', '$no_telp', '$email', '$gender', '$tgl_lahir')";
+$sql3 = "INSERT INTO penumpang (id_user, nama_lengkap, no_telp, jenis_kelamin, tgl_lahir) 
+        VALUES('$id_user[0]', '$nama', '$no_telp', '$gender', '$tgl_lahir')";
 $stmt3 = sqlsrv_query($conn, $sql3);
 
 if( $stmt3 === false ) {
