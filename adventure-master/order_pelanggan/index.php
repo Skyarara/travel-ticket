@@ -37,6 +37,7 @@
                     <th scope="col">Nama Penumpang</th>
                     <th scope="col">Kode Pesawat</th>
                     <th scope="col">Tanggal Pemesanan</th>
+                    <th scope="col">Jumlah Penumpang</th>
                     <th scope="col">Aksi</th>
                 </thead>
                 <tbody>
@@ -48,6 +49,7 @@
                         </td>
                         <td><?= $dt['kode'] ?></td>
                         <td><?= date_format($dt['tanggal_pemesanan'], "d M, Y") ?></td>
+                        <td><?= $dt['jumlah_penumpang'] ?></td>
                         <td>
                             <div class="btn-group">
                                 <a href="delete_action.php?id='<?= $dt['id_pemesanan'] ?>'"

@@ -8,17 +8,25 @@ $jk = $_POST['jk'];
 $nik = $_POST['nik'];
 $id_tiket = $_POST['id_tiket'];
 $harga = $_POST['harga_tiket'];
-$id_petugas = $_SESSION['data']['id_petugas'];
+$id_penumpang = $_SESSION['data']['id_penumpang'];
 $jumlah = $_POST['jumlah'];
 $date = date('d-m-Y');
 $kode = $_POST['kode'];
 $sisa = $_POST['sisa'];
 $total_bayar = $harga * $jumlah; 
+// var_dump($id_penumpang);
+// exit;
 
-
-$sql = "INSERT INTO pemesanan(id_petugas, id_tiket, tanggal_pemesanan, total_bayar, jumlah_penumpang, status)
-        VALUES('$id_petugas', '$id_tiket', '$date', '$total_bayar', '$jumlah', '1')";
+$sql = "INSERT INTO pemesanan(id_penumpang, id_tiket, tanggal_pemesanan, total_bayar, jumlah_penumpang, status)
+        VALUES('$id_penumpang', '$id_tiket', '$date', '$total_bayar', '$jumlah', '0')";
 $query = sqlsrv_query($conn, $sql);
+
+if( $query === false ) {
+    if( ($errors = sqlsrv_errors() ) != null) {
+        echo $errors[0]['message'];
+        exit;
+    }
+}
 
 $sql2 = "SELECT IDENT_CURRENT('pemesanan')";
 $stmt2 = sqlsrv_query($conn, $sql2);
@@ -36,11 +44,6 @@ foreach($nama as $key => $dt){
 $sql3 = substr($sql3, 0, strlen($sql3) - 1).";";
 $query3 = sqlsrv_query($conn, $sql3);
 
-if( $query3 === false ) {
-    if( ($errors = sqlsrv_errors() ) != null) {
-        echo $errors[0]['message'];
-        exit;
-    }
-}
+
 
 header('Location: index.php');
