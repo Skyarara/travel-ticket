@@ -41,7 +41,7 @@ if(sqlsrv_has_rows($stmt2) != TRUE){
     ];
     echo"<script type='text/javascript'>
         alert('Selamat Datang User')
-        window.location.href = '../user_dashboard/index.php'
+        window.location.href = '../index.php'
     </script>";
     exit;
 }else{

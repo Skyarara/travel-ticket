@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
@@ -29,9 +33,9 @@
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
 	<!-- select 2 -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
-	
+
 </head>
 
 <body>
@@ -58,7 +62,11 @@
 							<li><a href="order_pelanggan/index.php">Katalog</a></li>
 							<li><a href="#">Transaksi</a></li>
 							<li><a href="user_profile.php">Profile</a></li>
+							<?php if(isset($_SESSION['login'])): ?>
+							<li><a href="auth/logout.php">Log Out</a></li>
+							<?php else: ?>
 							<li><a href="auth/login.php">Login</a></li>
+							<?php endif; ?>
 						</ul>
 					</div>
 				</div>
