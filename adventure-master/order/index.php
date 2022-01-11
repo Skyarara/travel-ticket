@@ -2,10 +2,17 @@
     require_once '../../conn.php';
     require_once '../template/sidebar.php';
     require_once '../template/header.php';
-    $sql = "SELECT * FROM pemesanan JOIN penumpang ON pemesanan.id_penumpang = penumpang.id_penumpang
-            JOIN tiket ON pemesanan.id_tiket = tiket.id_tiket
-            JOIN transportasi ON tiket.id_transportasi = transportasi.id_trasportasi";
+    $sql = "SELECT * FROM pemesanan 
+    LEFT JOIN penumpang ON pemesanan.id_penumpang = penumpang.id_penumpang 
+    JOIN tiket ON pemesanan.id_tiket = tiket.id_tiket
+    JOIN transportasi ON tiket.id_transportasi = transportasi.id_trasportasi";
     $stmt = sqlsrv_query($conn, $sql);
+    if( $stmt === false ) {
+        if( ($errors = sqlsrv_errors() ) != null) {
+            echo $errors[0]['message'];
+            exit;
+        }
+    }
 
     $sql2 = "SELECT * FROM cities JOIN provinces ON cities.prov_id = provinces.prov_id";
     $stmt2 = sqlsrv_query($conn, $sql2);
@@ -43,7 +50,9 @@
                     <tr>
                         <td><?= $a++ ?></td>
                         <td class="pl-0">
-                            <div class="d-flex align-items-center"><?= $dt['nama_lengkap'] ?></div>
+                            <div class="d-flex align-items-center">
+                                <?= $dt['nama_lengkap'] ? $dt['nama_lengkap'] : 'Customer'.$dt['id_pemesanan'] ?>
+                            </div>
                         </td>
                         <td><?= $dt['kode'] ?></td>
                         <td><?= date_format($dt['tanggal_pemesanan'], "d M, Y") ?></td>
@@ -52,7 +61,6 @@
                                 <a href="delete_action.php?id='<?= $dt['id_pemesanan'] ?>'"
                                     class='btn btn-danger'>Hapus</a>
                                 <a href="detail.php?id='<?= $dt['id_pemesanan'] ?>'" class='btn btn-info'>Info</a>
-                                <a href="edit.php?id='<?= $dt['id_pemesanan'] ?>'" class='btn btn-warning'>Edit</a>
                             </div>
                         </td>
                     </tr>
