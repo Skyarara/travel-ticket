@@ -123,17 +123,16 @@
                             <?php endwhile;?>
                         </select>
                     </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Pesan</button>
+                    </div>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Pesan</button>
-            </div>
-            </form>
         </div>
     </div>
-</div>
 
 
-<?php
+    <?php
     require_once '../template/footer.php';
 ?>

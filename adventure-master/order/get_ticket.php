@@ -3,9 +3,6 @@
     require_once '../template/sidebar.php';
     require_once '../template/header.php';
 
-    // var_dump($_GET);
-    // exit;
-
     $rute_awal = $_GET['rute_awal'];
     $rute_akhir = $_GET['rute_akhir'];
     $date = new DateTime($_GET['date']);
@@ -25,15 +22,23 @@
             AND type_transportasi.id_type_transportasi='$kelas' 
             AND sisa_kursi >= '$jumlah'";
 
-    $stmt = sqlsrv_query($conn, $sql);
+    $stmt = sqlsrv_query($conn, $sql);  
 
+    if(sqlsrv_has_rows($stmt) == FALSE){
+        echo '<script type="text/javascript">
+            alert("Tiket Tidak Ada")
+            window.location.href = "index.php";
+            </script>';
+        exit;
+    }
 
-// if( $stmt === false ) {
-    // if( ($errors = sqlsrv_errors() ) != null) {
-        // echo $errors[0]['message'];
-        // exit;
-    // }
-// }
+    if( $stmt === false ) {
+        if( ($errors = sqlsrv_errors() ) != null) {
+            echo $errors[0]['message'];
+            exit;
+        }
+    }
+
     $stmt2 = sqlsrv_query($conn, $sql);
     $rute= sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC, 1);
 ?>
