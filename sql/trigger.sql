@@ -26,3 +26,16 @@ BEGIN
 		SELECT @pass = password from inserted
 		INSERT INTO [user](email, password) VALUES(@email, @pass);
 END
+
+-- kurang penumpang
+CREATE TRIGGER kurang_penumpang ON pemesanan AFTER INSERT
+AS
+declare @id_tiket int  
+declare @jumlah int
+declare @jumlah int
+
+SELECT @id_tiket = id_tiket from inserted  
+SELECT @jumlah = jumlah_penumpang from inserted  
+
+UPDATE tiket SET sisa_kursi = ((SELECT sisa_kursi FROM tiket WHERE id_tiket = @id_tiket) - @jumlah)
+WHERE id_tiket = @id_tiket

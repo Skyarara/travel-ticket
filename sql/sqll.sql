@@ -25,8 +25,8 @@ CREATE TABLE [penumpang] (
 GO
 CREATE TABLE [pemesanan] (
 	id_pemesanan INT IDENTITY(1,1) NOT NULL,
-	id_penumpang integer NOT NULL,
-	id_petugas integer NOT NULL,
+	id_penumpang integer NULL,
+	id_petugas integer NULL,
 	id_tiket integer NOT NULL,
 	tanggal_pemesanan date NOT NULL,
 	total_bayar decimal(20) NOT NULL,

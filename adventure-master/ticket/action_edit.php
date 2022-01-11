@@ -18,7 +18,6 @@ $sql = "UPDATE tiket SET id_transportasi='$type', rute_awal='$rute_awal', rute_a
 
 $stmt = sqlsrv_query( $conn, $sql );
 
-
 if( $stmt === false ) {
     if( ($errors = sqlsrv_errors() ) != null) {
         echo $errors[0]['message'];

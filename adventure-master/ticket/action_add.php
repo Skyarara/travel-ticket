@@ -15,7 +15,6 @@ $sql = "INSERT INTO tiket(id_transportasi, rute_awal, rute_akhir, harga, waktu_b
 
 $stmt = sqlsrv_query( $conn, $sql );
 
-
 if( $stmt === false ) {
     if( ($errors = sqlsrv_errors() ) != null) {
         echo $errors[0]['message'];

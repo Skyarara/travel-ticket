@@ -30,6 +30,9 @@
     <!-- select 2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+    <!-- css -->
+    <link rel="stylesheet" href="../css/my.css">
+
 </head>
 
 <body id="page-top">
@@ -68,13 +71,21 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../TransportType/index.php"><i
-                        class="fas fa fa-plane"></i><span>Tipe Tranportasi</span></a>
-                <a class="nav-link collapsed" href="../transport/index.php"><i
-                        class="fas fa fa-plane"></i><span>Tranportasi</span></a>
-                <a class="nav-link collapsed" href="../ticket/index.php"><i
-                        class="fas fa-ticket-alt"></i><span>Tiket</span></a>
-                <a class="nav-link collapsed" href="../user/index.php"><i class="fas fa-users"></i><span>User</span></a>
+                <a class="nav-link collapsed" href="../TransportType/index.php">
+                    <i class="fas fa fa-plane"></i><span>Tipe Tranportasi</span>
+                </a>
+                <a class="nav-link collapsed" href="../transport/index.php">
+                    <i class="fas fa fa-plane"></i><span>Tranportasi</span>
+                </a>
+                <a class="nav-link collapsed" href="../ticket/index.php">
+                    <i class="fas fa-ticket-alt"></i><span>Tiket</span>
+                </a>
+                <a class="nav-link collapsed" href="../user/index.php">
+                    <i class="fas fa-users"></i><span>User</span>
+                </a>
+                <a class="nav-link collapsed" href="../order/index.php">
+                    <i class="fas fa-shopping-cart"></i><span>Pesanan</span>
+                </a>
                 <a class="nav-link collapsed" href="#"><i class="far fa-stop-circle"></i><span>Tabel Lain</span></a>
                 <a class="nav-link collapsed" href="#"><i class="far fa-stop-circle"></i><span>Tabel Lain</span></a>
                 <a class="nav-link collapsed" href="#"><i class="far fa-stop-circle"></i><span>Tabel Lain</span></a>
