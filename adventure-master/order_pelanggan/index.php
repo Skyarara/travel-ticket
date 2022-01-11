@@ -55,7 +55,7 @@
                                 <a href="delete_action.php?id='<?= $dt['id_pemesanan'] ?>'"
                                     class='btn btn-danger'>Hapus</a>
                                 <a href="detail.php?id='<?= $dt['id_pemesanan'] ?>'" class='btn btn-info'>Info</a>
-                                <a href="edit.php?id='<?= $dt['id_pemesanan'] ?>'" class='btn btn-warning'>Edit</a>
+                                <a href="info.php?id='<?= $dt['id_pemesanan'] ?>'" class='btn btn-warning'>Edit</a>
                             </div>
                         </td>
                     </tr>
