@@ -23,6 +23,8 @@ $waktu_sampai = date_format($data['waktu_sampai'], "Y/m/d H:i:s");
 $waktu_sampai = date('d M, Y H:i:s', strtotime($waktu_sampai));
 ?>
 <!-- Page Heading -->
+<br><br>
+<div class ="container">
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Oder <?= $data['nama_pesawat'] ?></h1>
 </div>
@@ -91,6 +93,8 @@ $waktu_sampai = date('d M, Y H:i:s', strtotime($waktu_sampai));
             <button type="submit" class="btn btn-primary">Pesan</button>
         </form>
     </div>
+            </div>
+            </div>
 
     <?php
 require_once '../template/footer_home2.php';
