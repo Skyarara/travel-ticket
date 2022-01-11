@@ -11,6 +11,8 @@ BEGIN
 	UPDATE tiket SET sisa_kursi = (SELECT jumlah_kursi FROM transportasi WHERE id_trasportasi = @id_transportasi)
 END
 
+GO
+
 -- chek email
 CREATE trigger check_email ON [user] INSTEAD OF INSERT
 AS
@@ -26,6 +28,8 @@ BEGIN
 		SELECT @pass = password from inserted
 		INSERT INTO [user](email, password) VALUES(@email, @pass);
 END
+
+GO
 
 -- kurang penumpang
 CREATE TRIGGER kurang_penumpang ON pemesanan AFTER INSERT
