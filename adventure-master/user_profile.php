@@ -26,40 +26,11 @@
         </div>
     <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Simpan</button></div>
     </div>
+</div>
+</div>
+</div>
 
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Anggota keluarga</h6>
-        <a href="add.php" class="btn btn-primary float-right">Tambah</a>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-        <table class="table table-striped custom-table">
-                <thead>
-                    <th scope="col">NIK</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Jenis Kelamin</th>
-                    <th scope="col">Nomor Telepon</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>089849783721</td>
-                        <td>Jono</td>
-                        <td>Pria</td>
-                        <td>08430902901280</td>
-                        <td>
-                            <a href="#" class='btn btn-danger'>Hapus</a>
-                            <a href="#" class='btn btn-warning'>Edit</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
+
 
 <?php
     require_once '../adventure-master/template/footer_home.php';
