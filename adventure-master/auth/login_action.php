@@ -35,7 +35,9 @@ if(sqlsrv_has_rows($stmt2) != TRUE){
     $dt = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC);
     $_SESSION['data'] = [
         'id' => $data[1],
-        'nama' => $dt['nama_lengkap']
+        'id_penumpang' => $dt['id_penumpang'],
+        'nama' => $dt['nama_lengkap'],
+        'role' => 'penumpang'
     ];
     echo"<script type='text/javascript'>
         alert('Selamat Datang User')
@@ -46,7 +48,9 @@ if(sqlsrv_has_rows($stmt2) != TRUE){
     $dt = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC);
     $_SESSION['data'] = [
         'id' => $data[1],
-        'nama' => $dt['nama_petugas']
+        'id_petugas' => $dt['id_petugas'],
+        'nama' => $dt['nama_petugas'],
+        'role' => 'petugas'
     ];
     echo"<script type='text/javascript'>
         alert('Selamat Datang Petugas')
