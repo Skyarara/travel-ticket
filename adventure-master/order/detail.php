@@ -1,6 +1,7 @@
 <?php
 require_once '../../conn.php';
-require_once '../template/header_home2.php';
+require_once '../template/header.php';
+require_once '../template/sidebar.php';
 
 $id= $_GET['id'];
 
@@ -94,5 +95,5 @@ $waktu_sampai = date('d M, Y H:i:s', strtotime($waktu_sampai));
             </div>
 
     <?php
-require_once '../template/footer_home2.php';
+require_once '../template/footer.php';
 ?>
