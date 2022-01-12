@@ -31,6 +31,11 @@
 			<script src="js/waypoints.min.js"></script>
 			<script src="js/main.js"></script>
 			<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+			<script>
+				$(document).ready(function () {
+					$('#myTable').DataTable();
+				});
+			</script>
 			</body>
 
 			</html>

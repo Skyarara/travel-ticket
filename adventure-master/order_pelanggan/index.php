@@ -1,9 +1,20 @@
 <?php
-    require_once '../../conn.php';
     require_once '../template/header_home2.php';
+    if(!isset($_SESSION['login'])){
+        echo "<script> 
+                alert('Login Terlebih Dahulu !');
+                window.location.href = '../auth/login.php';
+            </script>";
+        exit;
+    }
+    require_once '../../conn.php';
+    $id_penumpang = $_SESSION['data']['id_penumpang'];
+
+
     $sql = "SELECT * FROM pemesanan JOIN penumpang ON pemesanan.id_penumpang = penumpang.id_penumpang
             JOIN tiket ON pemesanan.id_tiket = tiket.id_tiket
-            JOIN transportasi ON tiket.id_transportasi = transportasi.id_trasportasi";
+            JOIN transportasi ON tiket.id_transportasi = transportasi.id_trasportasi 
+            WHERE pemesanan.id_penumpang ='$id_penumpang'";
     $stmt = sqlsrv_query($conn, $sql);
 
     $sql2 = "SELECT * FROM cities JOIN provinces ON cities.prov_id = provinces.prov_id";
@@ -38,6 +49,7 @@
                         <th scope="col">Kode Pesawat</th>
                         <th scope="col">Tanggal Pemesanan</th>
                         <th scope="col">Jumlah Penumpang</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Aksi</th>
                     </thead>
                     <tbody>
@@ -50,12 +62,15 @@
                             <td><?= $dt['kode'] ?></td>
                             <td><?= date_format($dt['tanggal_pemesanan'], "d M, Y") ?></td>
                             <td><?= $dt['jumlah_penumpang'] ?></td>
+                            <td><?= $dt['status'] == 1 ?  '<a style="color:green">Selesai</a>' : '<a style="color:red">Belum Selesai</a>' ?>
                             <td>
                                 <div class="btn-group">
-                                    <a href="delete_action.php?id='<?= $dt['id_pemesanan'] ?>'"
+                                    <a href="detail.php?id=<?= $dt['id_pemesanan'] ?>" class='btn btn-info'>Info</a>
+                                    &nbsp;
+                                    <?php if( $dt['status'] == 0): ?>
+                                    <a href='delete_action2.php?id=<?=$dt['id_pemesanan']?>'
                                         class='btn btn-danger'>Hapus</a>
-                                    <a href="detail.php?id='<?= $dt['id_pemesanan'] ?>'" class='btn btn-info'>Info</a>
-                                    <a href="info.php?id='<?= $dt['id_pemesanan'] ?>'" class='btn btn-warning'>Edit</a>
+                                    <?php endif; ?>
                                 </div>
                             </td>
                         </tr>

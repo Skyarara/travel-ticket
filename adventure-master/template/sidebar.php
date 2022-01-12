@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Freehand</title>
 
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -30,9 +30,6 @@
     <!-- select 2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-
-    <!-- css -->
-    <link rel="stylesheet" href="../css/my.css">
 
 </head>
 
@@ -87,9 +84,6 @@
                 <a class="nav-link collapsed" href="../order/index.php">
                     <i class="fas fa-shopping-cart"></i><span>Pesanan</span>
                 </a>
-                <a class="nav-link collapsed" href="#"><i class="far fa-stop-circle"></i><span>Tabel Lain</span></a>
-                <a class="nav-link collapsed" href="#"><i class="far fa-stop-circle"></i><span>Tabel Lain</span></a>
-                <a class="nav-link collapsed" href="#"><i class="far fa-stop-circle"></i><span>Tabel Lain</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">

@@ -32,6 +32,7 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 
 
 </head>
@@ -57,8 +58,7 @@
 						<ul class="navbar-nav">
 							<li><a href="index.php">Home</a></li>
 							<li><a href="index.php#about">About</a></li>
-							<li><a href="order_pelanggan/index.php">Katalog</a></li>
-							<li><a href="#">Transaksi</a></li>
+							<li><a href="order_pelanggan/index.php">Transaksi</a></li>
 							<li><a href="user_profile.php">Profile</a></li>
 							<?php if(isset($_SESSION['login'])): ?>
 							<li><a href="auth/logout.php">Log Out</a></li>
