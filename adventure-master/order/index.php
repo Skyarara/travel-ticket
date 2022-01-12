@@ -4,6 +4,7 @@
     require_once '../template/header.php';
     $sql = "SELECT * FROM pemesanan 
     LEFT JOIN penumpang ON pemesanan.id_penumpang = penumpang.id_penumpang 
+    LEFT JOIN petugas ON pemesanan.id_petugas = petugas.id_petugas
     JOIN tiket ON pemesanan.id_tiket = tiket.id_tiket
     JOIN transportasi ON tiket.id_transportasi = transportasi.id_trasportasi";
     $stmt = sqlsrv_query($conn, $sql);
@@ -37,12 +38,14 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-striped custom-table">
+            <table class="table table-striped custom-table" id='myTable'>
                 <thead>
                     <th scope="col">No</th>
                     <th scope="col">Nama Penumpang</th>
                     <th scope="col">Kode Pesawat</th>
                     <th scope="col">Tanggal Pemesanan</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Petugas</th>
                     <th scope="col">Aksi</th>
                 </thead>
                 <tbody>
@@ -56,11 +59,21 @@
                         </td>
                         <td><?= $dt['kode'] ?></td>
                         <td><?= date_format($dt['tanggal_pemesanan'], "d M, Y") ?></td>
+                        <td><?= $dt['status'] == 1 ?  '<a style="color:green">Selesai</a>' : '<a style="color:red">Belum Selesai</a>' ?>
+                        </td>
+                        <td><?= $dt['nama_petugas'] ?></td>
                         <td>
                             <div class="btn-group">
-                                <a href="delete_action.php?id='<?= $dt['id_pemesanan'] ?>'"
+                                <a href="detail.php?id=<?= $dt['id_pemesanan'] ?>" class='btn btn-info'>Info</a>&nbsp;
+                                <?php if( $dt['status'] == 0): ?>
+                                <a href='verif.php?id= <?= $dt['id_pemesanan']?>'
+                                    class='btn btn-success'>Verifikasi</a>&nbsp;
+                                <a href='delete_action2.php?id=<?=$dt['id_pemesanan']?>'
                                     class='btn btn-danger'>Hapus</a>
-                                <a href="detail.php?id='<?= $dt['id_pemesanan'] ?>'" class='btn btn-info'>Info</a>
+                                <?php endif; ?>
+                                <?php if( $dt['status'] == 1): ?>
+                                <a href='delete_action.php?id=<?=$dt['id_pemesanan']?>' class='btn btn-danger'>Hapus</a>
+                                <?php endif; ?>
                             </div>
                         </td>
                     </tr>
@@ -86,23 +99,25 @@
                 <form action='get_ticket.php' method='GET'>
                     <div class="form-group">
                         <label>Rute Awal</label>
-                        <select name="rute_awal" class='form-control js2' style="width: 100%" required>
+                        <input list="rute_awal" name="rute_awal" class="form-control">
+                        <datalist id="rute_awal">
                             <option value="">--- Pilih Rute Awal ---</option>
                             <?php while($dt = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_ASSOC)): ?>
-                            <option value="<?= $dt['city_id'] ?>">
-                                <?= $dt['prov_name'].' | '. $dt['city_name'] ?></option>
+                            <option value="<?= $dt['city_id'] ?>"><?= $dt['prov_name'].' | '. $dt['city_name'] ?>
+                            </option>
                             <?php endwhile;?>
-                        </select>
+                        </datalist>
                     </div>
                     <div class="form-group">
                         <label>Rute Akhir</label>
-                        <select name="rute_akhir" class='form-control js2' style="width: 100%" required>
+                        <input list="rute_akhir" name="rute_akhir" class="form-control">
+                        <datalist id="rute_akhir">
                             <option value="">--- Pilih Rute Akhir ---</option>
                             <?php while($dt = sqlsrv_fetch_array($stmt3, SQLSRV_FETCH_ASSOC)): ?>
                             <option value="<?= $dt['city_id'] ?>"><?= $dt['prov_name'].' | '. $dt['city_name'] ?>
                             </option>
                             <?php endwhile;?>
-                        </select>
+                        </datalist>
                     </div>
                     <div class="form-group">
                         <label>Tanggal Berangkat</label>

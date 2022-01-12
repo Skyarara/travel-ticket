@@ -1,15 +1,8 @@
 <?php
 require_once '../../conn.php';
-<<<<<<< HEAD
-require_once '../template/header.php';
-require_once '../template/sidebar.php';
-=======
-require_once '../template/sidebar.php';
-require_once '../template/header.php';
->>>>>>> df4b4ae9fe8669ecf90d0a53da4e8841bf5fc788
+require_once '../template/header_home2.php';
 
 $id= $_GET['id'];
-// $jumlah= $_GET['jumlah'];
 
 $sql = "SELECT tiket.id_tiket, a.city_name awal, b.city_name akhir, harga, waktu_berangkat, waktu_sampai,
         nama_pesawat, kode, nama_type, sisa_kursi, jumlah_penumpang FROM tiket 
@@ -112,5 +105,5 @@ $query2 = sqlsrv_query($conn, $sql2);
     </div>
 
     <?php
-require_once '../template/footer.php';
+require_once '../template/footer_home2.php';
 ?>

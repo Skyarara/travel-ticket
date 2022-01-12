@@ -14,8 +14,6 @@ $date = date('d-m-Y');
 $kode = $_POST['kode'];
 $sisa = $_POST['sisa'];
 $total_bayar = $harga * $jumlah; 
-// var_dump($id_penumpang);
-// exit;
 
 $sql = "INSERT INTO pemesanan(id_penumpang, id_tiket, tanggal_pemesanan, total_bayar, jumlah_penumpang, status)
         VALUES('$id_penumpang', '$id_tiket', '$date', '$total_bayar', '$jumlah', '0')";
