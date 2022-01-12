@@ -35,12 +35,14 @@ $query2 = sqlsrv_query($conn, $sql2);
 
 ?>
 <!-- Page Heading -->
+<br><br>
+<div class ="container">
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Oder <?= $data['nama_pesawat'] ?></h1>
+    <h1 class="h3 mb-0 text-gray-800">Pesanan <?= $data['nama_pesawat'] ?></h1>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Oder <?= $data['nama_pesawat'] ?></h6>
+        <h6 class="m-0 font-weight-bold text-primary">Pesanan <?= $data['nama_pesawat'] ?></h6>
     </div>
     <div class="card-body">
         <form>
@@ -103,6 +105,9 @@ $query2 = sqlsrv_query($conn, $sql2);
             <a href="index.php" class="btn btn-info">Back</a>
         </form>
     </div>
+            </div>
+            </div>
+            </div><br><br>
 
     <?php
 require_once '../template/footer_home2.php';

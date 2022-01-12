@@ -24,6 +24,7 @@
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
 			<form action="register_action.php" method='POST'>
+				<h1>Sign up</h1>
 				<input type="text" placeholder="Nama" name='nama' required>
 				<input type="number" placeholder="Nomor Telepon" name='no_telp' required>
 				<select name="gender">
@@ -50,14 +51,14 @@
 		<div class="overlay-container">
 			<div class="overlay">
 				<div class="overlay-panel overlay-left">
-					<h1>Welcome Back!</h1>
-					<p>To keep connected with us please login with your personal info</p>
+					<h1>Selamat datang kembali</h1>
+					<p>Untuk tetap terhubung dengan kami, login dengan data diri anda</p>
 					<button class="ghost" id="signIn">Sign In</button>
 				</div>
 				<div class="overlay-panel overlay-right">
-					<h1>Hello, Friend!</h1>
-					<p>Enter your personal details and start journey with us</p>
-					<button class="ghost" id="signUp">Sign Up</button>
+					<h1>Halo, Kawanku!</h1>
+					<p>Masukkan data diri anda dan jadilah member dari Free Hand</p>
+					<button class="ghost" id="signUp">Daftar</button>
 				</div>
 			</div>
 		</div>

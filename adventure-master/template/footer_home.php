@@ -2,7 +2,7 @@
 			<footer class="footer-area section-gap">
 				<div class="container">
 					<div class="single-footer-widget">
-						<h6>About Us</h6>
+						<h6>Tentang kami</h6>
 						<p>
 							3 Remaja yang mengerjakan proyek akhir mata kuliah Database System
 						</p>

@@ -8,7 +8,7 @@
 		<div class="row d-flex justify-content-center">
 			<div class="menu-content pb-40 col-lg-8">
 				<div class="title text-center">
-					<h1 class="mb-10">Our Team</h1>
+					<h1 class="mb-10">Tim Kami</h1>
 					<p>3 mahasiswa jurusan Computer Science</p>
 				</div>
 			</div>

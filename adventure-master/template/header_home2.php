@@ -60,7 +60,7 @@
 						id="navbarSupportedContent">
 						<ul class="navbar-nav">
 							<li><a href="../index.php">Home</a></li>
-							<li><a href="../index.php#about">About</a></li>
+							<li><a href="../index.php#about">Tentang Kami</a></li>
 							<li><a href="../order_pelanggan/index.php">Transaksi</a></li>
 							<li><a href="../user_profile.php">Profile</a></li>
 							<?php if(isset($_SESSION['login'])): ?>

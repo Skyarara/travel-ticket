@@ -1,12 +1,7 @@
 <?php
 require_once '../../conn.php';
-<<<<<<< HEAD
-require_once '../template/header.php';
-require_once '../template/sidebar.php';
-=======
 require_once '../template/sidebar.php';
 require_once '../template/header.php';
->>>>>>> df4b4ae9fe8669ecf90d0a53da4e8841bf5fc788
 
 $id= $_GET['id'];
 // $jumlah= $_GET['jumlah'];
@@ -38,16 +33,14 @@ $query2 = sqlsrv_query($conn, $sql2);
 // exit;
 // }
 // }
-
-
 ?>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Oder <?= $data['nama_pesawat'] ?></h1>
+    <h1 class="h3 mb-0 text-gray-800">Pesanan <?= $data['nama_pesawat'] ?></h1>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Oder <?= $data['nama_pesawat'] ?></h6>
+        <h6 class="m-0 font-weight-bold text-primary">Pesanan <?= $data['nama_pesawat'] ?></h6>
     </div>
     <div class="card-body">
         <form>
