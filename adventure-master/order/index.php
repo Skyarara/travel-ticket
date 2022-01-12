@@ -37,7 +37,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-striped custom-table">
+            <table class="table table-striped custom-table" id='myTable'>
                 <thead>
                     <th scope="col">No</th>
                     <th scope="col">Nama Penumpang</th>
@@ -60,7 +60,7 @@
                             <div class="btn-group">
                                 <a href="delete_action.php?id='<?= $dt['id_pemesanan'] ?>'"
                                     class='btn btn-danger'>Hapus</a>
-                                <a href="detail.php?id='<?= $dt['id_pemesanan'] ?>'" class='btn btn-info'>Info</a>
+                                <a href="detail.php?id=<?= $dt['id_pemesanan'] ?>" class='btn btn-info'>Info</a>
                             </div>
                         </td>
                     </tr>

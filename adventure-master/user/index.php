@@ -24,7 +24,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-striped custom-table">
+            <table class="table table-striped custom-table" id='myTable'>
                 <thead>
                     <th scope="col">No</th>
                     <th scope="col">email</th>
