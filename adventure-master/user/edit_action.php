@@ -7,7 +7,7 @@
     $pass = $_POST['pass'];
     $nama = $_POST['nama'];
 
-    if($pass != NULL){
+    if($pass == NULL){
         $sql = "UPDATE [user] SET email='$email' WHERE id_user='$id'";
     }else{
         $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);

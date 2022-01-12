@@ -1,12 +1,5 @@
 <?php
     require_once '../template/header_home2.php';
-    if(!isset($_SESSION['login'])){
-        echo "<script> 
-                alert('Login Terlebih Dahulu !');
-                window.location.href = '../auth/login.php';
-            </script>";
-        exit;
-    }
     require_once '../../conn.php';
     $id_penumpang = $_SESSION['data']['id_penumpang'];
 

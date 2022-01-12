@@ -58,8 +58,10 @@
 						<ul class="navbar-nav">
 							<li><a href="index.php">Home</a></li>
 							<li><a href="index.php#about">Tentang Kami</a></li>
+							<?php if(isset($_SESSION['login'])){ ?>
 							<li><a href="order_pelanggan/index.php">Transaksi</a></li>
 							<li><a href="user_profile.php">Profile</a></li>
+							<?php } ?>
 							<?php if(isset($_SESSION['login'])): ?>
 							<li><a href="auth/logout.php">Log Out</a></li>
 							<?php else: ?>
