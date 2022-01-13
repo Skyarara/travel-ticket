@@ -2,11 +2,13 @@
     require_once '../../conn.php';
     require_once '../template/sidebar.php';
     require_once '../template/header.php';
-    $sql = "SELECT id_tiket, a.city_name awal, b.city_name akhir, harga, waktu_berangkat, waktu_sampai, nama_pesawat
-            FROM tiket
+    $sql = "SELECT id_tiket, a.city_name awal, b.city_name akhir, harga, waktu_berangkat,
+            waktu_sampai, nama_pesawat, sisa_kursi, nama_type FROM tiket
             JOIN cities a ON a.city_id = tiket.rute_awal
             JOIN cities b ON b.city_id = tiket.rute_akhir
-            JOIN transportasi ON tiket.id_transportasi = transportasi.id_trasportasi";
+            JOIN transportasi ON tiket.id_transportasi = transportasi.id_trasportasi
+            JOIN type_transportasi ON transportasi.id_type_transportasi = type_transportasi.id_type_transportasi
+            ";
     $stmt = sqlsrv_query($conn, $sql);
 
 ?>
@@ -31,18 +33,20 @@
                     <th scope="col">Harga</th>
                     <th scope="col">Waktu Berangkat</th>
                     <th scope="col">Waktu Sampai</th>
+                    <th scope="col">Sisa Kursi</th>
                     <th scope="col">Aksi</th>
                 </thead>
                 <tbody>
                     <?php $a=1; while($dt = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)): ?>
                     <tr>
                         <td><?= $a++ ?></td>
-                        <td><?= $dt['nama_pesawat'] ?></td>
+                        <td><?= $dt['nama_pesawat'] .' '. $dt['nama_type']?></td>
                         <td><?= $dt['awal'] ?></td>
                         <td><?= $dt['akhir'] ?></td>
                         <td><?= $dt['harga'] ?></td>
                         <td><?= date_format($dt['waktu_berangkat'], 'd M Y | H:i') ?></td>
                         <td><?= date_format($dt['waktu_sampai'], 'd M Y | H:i') ?></td>
+                        <td><?= $dt['sisa_kursi'] ?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <a href="action_delete.php?id=<?= $dt['id_tiket'] ?>" class='btn btn-danger'>Hapus</a>

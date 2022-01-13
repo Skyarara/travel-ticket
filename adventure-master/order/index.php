@@ -31,7 +31,10 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Tabel Transaksi</h6>
-        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modalTiket">
+        <a type="button" href='print_all.php' class="btn btn-secondary float-right">
+            Print
+        </a>
+        <button type="button" class="btn btn-primary float-right mr-3" data-toggle="modal" data-target="#modalTiket">
             Pesan
         </button>
 
@@ -72,7 +75,9 @@
                                     class='btn btn-danger'>Hapus</a>
                                 <?php endif; ?>
                                 <?php if( $dt['status'] == 1): ?>
-                                <a href='delete_action.php?id=<?=$dt['id_pemesanan']?>' class='btn btn-danger'>Hapus</a>
+                                <a href='delete_action.php?id=<?=$dt['id_pemesanan']?>'
+                                    class='btn btn-danger'>Hapus</a>&nbsp;
+                                <a href='print.php?id=<?=$dt['id_pemesanan']?>' class='btn btn-secondary'>Print</a>
                                 <?php endif; ?>
                             </div>
                         </td>

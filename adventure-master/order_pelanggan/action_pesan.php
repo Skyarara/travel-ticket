@@ -34,7 +34,7 @@ $id_pemesanan = sqlsrv_fetch_array($stmt2, SQLSRV_FETCH_NUMERIC);
 
 $sql3 = "INSERT INTO detail_pemesanan(id_pemesanan, nama_penumpang, nik, kode_kursi, jenis_kelamin) VALUES";
 foreach($nama as $key => $dt){
-    $kode_kursi = $kode.date('dmy').$sisa;
+    $kode_kursi = $kode.date('dmhis').$sisa;
     $sql3 .= " ('$id_pemesanan[0]', '$dt', '$nik[$key]', '$kode_kursi', '$jk[$key]'),";
     $sisa--;
 }

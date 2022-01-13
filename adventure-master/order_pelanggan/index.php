@@ -64,6 +64,9 @@
                                     <a href='delete_action2.php?id=<?=$dt['id_pemesanan']?>'
                                         class='btn btn-danger'>Hapus</a>
                                     <?php endif; ?>
+                                    <?php if( $dt['status'] == 1): ?>
+                                    <a href='print.php?id=<?=$dt['id_pemesanan']?>' class='btn btn-secondary'>Print</a>
+                                    <?php endif; ?>
                                 </div>
                             </td>
                         </tr>
