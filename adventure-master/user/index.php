@@ -42,7 +42,8 @@
                         <td><?= $dt['nama'] ?></td>
                         <td><?= $dt['role'] ?></td>
                         <td>
-                            <a href="delete_action.php?id=<?= $dt['id_user'] ?>" class='btn btn-danger'>Hapus</a>
+                            <a href="delete_action.php?id=<?= $dt['id_user'] ?>&role=<?= $dt['role']?>"
+                                class='btn btn-danger'>Hapus</a>
                             <a href="edit.php?id=<?= $dt['id_user'] ?>&role=<?= $dt['role']?>"
                                 class='btn btn-warning'>Edit</a>
                         </td>

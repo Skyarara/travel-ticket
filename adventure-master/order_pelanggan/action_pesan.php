@@ -10,10 +10,14 @@ $id_tiket = $_POST['id_tiket'];
 $harga = $_POST['harga_tiket'];
 $id_penumpang = $_SESSION['data']['id_penumpang'];
 $jumlah = $_POST['jumlah'];
-$date = date('d-m-Y');
+$date = date('Y-m-d');
 $kode = $_POST['kode'];
 $sisa = $_POST['sisa'];
 $total_bayar = $harga * $jumlah; 
+
+
+// var_dump($date);
+// exit;
 
 $sql = "INSERT INTO pemesanan(id_penumpang, id_tiket, tanggal_pemesanan, total_bayar, jumlah_penumpang, status)
         VALUES('$id_penumpang', '$id_tiket', '$date', '$total_bayar', '$jumlah', '0')";
